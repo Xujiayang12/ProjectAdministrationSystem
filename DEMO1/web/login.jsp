@@ -263,7 +263,7 @@
                     </div>
                     <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs" style="border-color: transparent;background-color: transparent;">
                         <form action="main.jsp" method="post" style="border-color: transparent;background-color: transparent;">
-                            <div class="weui-cells weui-cells_form" style="border-color: transparent;background-color: transparent;">
+                            <div class="weui-form-preview" style="border-color: transparent;background-color: transparent;">
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
                                     <div class="weui-cell__bd">
@@ -271,15 +271,21 @@
                                     </div>
                                 </div>
                                 <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+                                    <div class="weui-cell__hd"><label class="weui-label">密&nbsp;&nbsp;&nbsp;码</label></div>
                                     <div class="weui-cell__bd">
                                         <input class="weui-input" type ="password" name ="upwd" />
                                     </div>
                                 </div>
-                                <a href="javascript:;" class="weui-btn weui-btn_primary">确认</a>
-                                <a href="javascript:;" class="weui-btn weui-btn_plain-primary">清空</a>
-                                <div class="weui-cells__tips">建议使用Google浏览器或360浏览器（极速模式），使用其它浏览器可能产生部分功能失效</div>
-                                <div class="weui-cells__tips"></div>
+                                <div class="weui-form-preview__bd">
+                                    <div class="weui-form-preview__item" style="font-size: small;">
+                                        <span class="weui-form-preview__value">建议使用Google浏览器或360浏览器（极速模式），使用其它浏览器可能产生部分功能失效</span>
+                                    </div>
+                                </div>
+                                <div class="weui-form-preview__ft">
+                                    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">登录</button>
+                                    <button class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">注册</button>
+                                    <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">清空</a>
+                                </div>
                             </div>
                         </form>
 
