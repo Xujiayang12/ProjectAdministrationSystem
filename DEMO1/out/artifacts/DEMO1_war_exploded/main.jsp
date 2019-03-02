@@ -279,6 +279,7 @@
     request.setCharacterEncoding("utf-8");
     String username="";
     String password = "";
+    String user_name = URLEncoder.encode(request.getParameter("username"),"utf-8");
     Cookie[] cookies = request.getCookies();
     if(cookies!=null&&cookies.length>0)
     {
@@ -308,7 +309,7 @@
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="MyProject.jsp" target="main">
-                        <i class="icon material-icons sidebar-icons">person</i>帐号：<%=username %></a></li>
+                        <i class="icon material-icons sidebar-icons">person</i>帐号：<%=user_name %></a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="MyProject.jsp" target="main">
