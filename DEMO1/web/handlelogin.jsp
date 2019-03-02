@@ -50,7 +50,7 @@
         }
         pageContext.forward("main.jsp");
     }else{
-        pageContext.forward("login.jsp");
+        out.print("<script type='text/javascript'>alert('密码错误或者无此用户');document.location.href='login.jsp';</script>");
     }
 %>
 </body>

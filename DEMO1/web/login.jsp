@@ -304,7 +304,6 @@
                                 <div class="weui-form-preview__ft">
                                     <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">登录</button>
                                     <button class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">注册</button>
-                                    <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">清空</a>
                                 </div>
                                 <div class="weui-cells weui-cells_checkbox" style="border-color: transparent;background-color: transparent;">
                                     <label class="weui-cell weui-check__label" for="s11">

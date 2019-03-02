@@ -362,7 +362,7 @@ copyrightSince = 2016,
             lsloader.runInlineScript(n.id, n.id)
         }
     }(),
-    console.log(" \n %c Spectre Theme | © neoFelhz | Verision 180330 %c https://github.com/neoFelhz/hexo-theme-spectre ", "color: #fff; background-image: linear-gradient(90deg, rgb(236, 61, 1213) 0%, rgb(94, 108, 198) 100%); padding:5px 1px;", "background-image: linear-gradient(90deg, rgb(94, 108, 198) 0%, rgb(194, 194, 194) 0%); padding:5px 0;")</script>
+    console.log("NMSL")</script>
 </body>
 
 </html>

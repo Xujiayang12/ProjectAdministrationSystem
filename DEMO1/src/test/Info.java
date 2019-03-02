@@ -23,22 +23,17 @@ public class Info {
         Statement stmt = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            c = DriverManager.getConnection("jdbc:sqlite:/home/atony/桌面/OOPkeshe/ProjectAministrationSystem/DEMO1/web/project.db");
-            System.out.println("Opened database successfully");
+            System.out.println(System.getProperty("user.dir"));
+            c = DriverManager.getConnection("jdbc:sqlite::resource:project.db");
             stmt = c.createStatement();
             String sql = "SELECT * FROM user where account='"+this.account+"' and password='"+this.password+"';";
             System.out.println(sql);
             ResultSet rs = stmt.executeQuery(sql);
-            int id = rs.getInt("id");
-            System.out.println(id);
-
             rs.close();
             stmt.close();
             c.close();
             return true;
         } catch (Exception e) {
-//            System.err.println(e.getClass().getName() + ": " + e.getMessage());
-//            System.exit(0);
             return false;
         }
     }
