@@ -11,6 +11,10 @@
     <link rel="dns-prefetch" href="//s.nfz.yecdn.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://s.nfz.yecdn.com">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
+    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
     <script>(/eruda=true/.test(window.location) || "true" == localStorage.getItem("active-eruda")) && (document.write('<script src="https://cdn.jsdelivr.net/npm/eruda@1.4.3/eruda.min.js"><\/script>'), document.write("<script>eruda.init();<\/script>"))</script>
     <script>/vconsole=true/.test(window.location) && (document.write('<script src="https://cdn.jsdelivr.net/npm/vconsole@3.1.0/dist/vconsole.min.js"><\/script>'), document.write("<script>var vConsole = new VConsole();<\/script>"))</script>
@@ -257,31 +261,26 @@
                                 <div class="card-title">请登录</div></div>
                         </div>
                     </div>
-                    <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs" style="border-color: transparent;">
-                        <form action="main.jsp" method="post" style="border-color: transparent;">
-                            <table border="5" align="right" style="border-color: transparent;">
-                                <tr>
-                                    <td>
-                                        <label>用户名：</label>
-                                        <input type="text" name="username" />
-                                        <br/></td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <label>密&nbsp;&nbsp;&nbsp;码：</label>
-                                        <input type="password" name="upwd" />
-                                        <br/></td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" align="center">
-                                        <input type="submit" value="确定">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                        <input type="reset" value="清空"></td></tr>
-                                <tr>
-                                    <td>
-                                        <h6>建议使用Google浏览器或360浏览器（极速模式），
-                                            <br/>使用其它浏览器可能产生部分功能失效</h6></tr>
-                            </table>
-                            </table>
+                    <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs" style="border-color: transparent;background-color: transparent;">
+                        <form action="main.jsp" method="post" style="border-color: transparent;background-color: transparent;">
+                            <div class="weui-cells weui-cells_form" style="border-color: transparent;background-color: transparent;">
+                                <div class="weui-cell">
+                                    <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                                    <div class="weui-cell__bd">
+                                        <input class="weui-input" type ="text" name ="username" />
+                                    </div>
+                                </div>
+                                <div class="weui-cell">
+                                    <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
+                                    <div class="weui-cell__bd">
+                                        <input class="weui-input" type ="password" name ="upwd" />
+                                    </div>
+                                </div>
+                                <a href="javascript:;" class="weui-btn weui-btn_primary">确认</a>
+                                <a href="javascript:;" class="weui-btn weui-btn_plain-primary">清空</a>
+                                <div class="weui-cells__tips">建议使用Google浏览器或360浏览器（极速模式），使用其它浏览器可能产生部分功能失效</div>
+                                <div class="weui-cells__tips"></div>
+                            </div>
                         </form>
 
                     </div>
