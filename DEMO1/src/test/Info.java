@@ -23,12 +23,14 @@ public class Info {
         Statement stmt = null;
         try {
             Class.forName("org.sqlite.JDBC");
-            System.out.println(System.getProperty("user.dir"));
+//            System.out.println(System.getProperty("user.dir"));
             c = DriverManager.getConnection("jdbc:sqlite::resource:project.db");
             stmt = c.createStatement();
             String sql = "SELECT * FROM user where account='"+this.account+"' and password='"+this.password+"';";
-            System.out.println(sql);
+//            System.out.println(sql);
             ResultSet rs = stmt.executeQuery(sql);
+            int id = rs.getInt("id");//设置这个来捕获找不到的错误
+            System.out.println(id);
             rs.close();
             stmt.close();
             c.close();
