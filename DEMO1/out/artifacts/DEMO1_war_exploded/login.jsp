@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+         pageEncoding="UTF-8" import="java.util.*,java.net.*" %>
 <!DOCTYPE html>
 <html style="display:none">
 <head>
@@ -229,6 +229,26 @@
     <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
 <body>
+<%
+    request.setCharacterEncoding("utf-8");
+    String username="";
+    String password = "";
+    Cookie[] cookies = request.getCookies();
+    if(cookies!=null&&cookies.length>0)
+    {
+        for(Cookie c:cookies)
+        {
+            if(c.getName().equals("username"))
+            {
+                username = URLDecoder.decode(c.getValue(),"utf-8");
+            }
+            if(c.getName().equals("password"))
+            {
+                password = URLDecoder.decode(c.getValue(),"utf-8");
+            }
+        }
+    }
+%>
 <div class="off-canvas off-canvas-sidebar-show">
     <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
         <i class="icon material-icons casino-icons">menu</i></a>
@@ -254,7 +274,7 @@
                 <div class="columns">
                     <div class="column col-xs-12 col-8 daily_pic">
                         <div class="card">
-                            <div class="card-image" style="background-image:url(https://st.nfz.yecdn.com/blog.nfz.moe/img/d.jpg)">
+                            <div class="card-image" style="background-image:url(./static/d.jpg)">
                                 <p>项目文档管理系统</p>
                             </div>
                             <div class="card-footer bg-gray hide-xs">
@@ -262,29 +282,40 @@
                         </div>
                     </div>
                     <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs" style="border-color: transparent;background-color: transparent;">
-                        <form action="main.jsp" method="post" style="border-color: transparent;background-color: transparent;">
+                        <form action="handlelogin.jsp" method="post" style="border-color: transparent;background-color: transparent;">
                             <div class="weui-form-preview" style="border-color: transparent;background-color: transparent;">
                                 <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                                    <div class="weui-cell__hd"><label class="weui-label">帐号</label></div>
                                     <div class="weui-cell__bd">
                                         <input class="weui-input" type ="text" name ="username" />
                                     </div>
                                 </div>
                                 <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">密&nbsp;&nbsp;&nbsp;码</label></div>
+                                    <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type ="password" name ="upwd" />
+                                        <input class="weui-input" type ="password" name ="password" />
                                     </div>
                                 </div>
                                 <div class="weui-form-preview__bd">
                                     <div class="weui-form-preview__item" style="font-size: small;">
-                                        <span class="weui-form-preview__value">建议使用Google浏览器或360浏览器（极速模式），使用其它浏览器可能产生部分功能失效</span>
+                                        <span class="weui-form-preview__value">建议使用Google浏览器</span>
                                     </div>
                                 </div>
                                 <div class="weui-form-preview__ft">
                                     <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">登录</button>
                                     <button class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">注册</button>
                                     <a class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">清空</a>
+                                </div>
+                                <div class="weui-cells weui-cells_checkbox" style="border-color: transparent;background-color: transparent;">
+                                    <label class="weui-cell weui-check__label" for="s11">
+                                        <div class="weui-cell__hd">
+                                            <input type="checkbox" class="weui-check" name="isUseCookie" id="s11" checked="checked">
+                                            <i class="weui-icon-checked"></i>
+                                        </div>
+                                        <div class="weui-cell__bd">
+                                            <p>十天内记住我</p>
+                                        </div>
+                                    </label>
                                 </div>
                             </div>
                         </form>

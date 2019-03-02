@@ -1,5 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" %>
+<%@ page language="java" import="java.util.*,java.net.*" contentType="text/html; charset=utf-8"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html style="display:none">
 
@@ -272,6 +275,26 @@
 </head>
 
 <body>
+<%
+    request.setCharacterEncoding("utf-8");
+    String username="";
+    String password = "";
+    Cookie[] cookies = request.getCookies();
+    if(cookies!=null&&cookies.length>0)
+    {
+        for(Cookie c:cookies)
+        {
+            if(c.getName().equals("username"))
+            {
+                username = URLDecoder.decode(c.getValue(),"utf-8");
+            }
+            if(c.getName().equals("password"))
+            {
+                password = URLDecoder.decode(c.getValue(),"utf-8");
+            }
+        }
+    }
+%>
 <div class="off-canvas off-canvas-sidebar-show">
     <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
         <i class="icon material-icons casino-icons">menu</i></a>
@@ -282,6 +305,10 @@
                     <i class="icon material-icons casino-icons">arrow_back</i></a>
                 <div class="sidebar-top"></div>
                 <span class="h4 text-center">项目文档管理系统</span>
+                <div class="divider"></div>
+                <li class="nav-item">
+                    <a href="MyProject.jsp" target="main">
+                        <i class="icon material-icons sidebar-icons">person</i>帐号：<%=username %></a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="MyProject.jsp" target="main">
