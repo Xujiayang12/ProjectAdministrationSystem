@@ -1,8 +1,6 @@
 package info;
 
 import org.apache.ibatis.session.SqlSession;
-
-import java.beans.Transient;
 import java.io.IOException;
 import java.util.List;
 

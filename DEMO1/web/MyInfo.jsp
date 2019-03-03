@@ -44,7 +44,7 @@
     }
     User user = User.findByAccount(user_name);
 %>
-<div class="info" style="background-color:#F8F9FA;">
+<div class="info" style="background-color:#F8F9FA; ">
     <div class="panel panel-primary">
         <div class="panel-heading">
             <h3 class="panel-title">用户名</h3>
