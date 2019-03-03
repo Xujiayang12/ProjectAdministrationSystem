@@ -296,7 +296,7 @@
             }
         }
     }
-    String name = User.getAllInfo(username,password).getName();
+    User user = User.findByAccount(username);
 %>
 <div class="off-canvas off-canvas-sidebar-show">
     <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
@@ -310,7 +310,17 @@
                 <span class="h4 text-center">项目文档管理系统</span>
                 <div class="divider"></div>
                 <li class="nav-item">
-                    <a href="userinfo.jsp" target="main">姓名：<%=name %></a></li>
+                    <a href="MyInfo.jsp" target="main">姓名：<%=user.getName() %>
+                        <%
+                            if(user.getAdmin()==1){
+                                out.print("(管理员)");
+                            }
+                            else {
+                                out.print("(普通用户)");
+                            }
+
+                        %>
+                    </a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="MyProject.jsp" target="main">

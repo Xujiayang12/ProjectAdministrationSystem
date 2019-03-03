@@ -246,7 +246,7 @@
 
 <body>
 <%
-    request.setCharacterEncoding("utf-8");
+//    request.setCharacterEncoding("utf-8");
     String username = URLEncoder.encode(request.getParameter("username"), "utf-8");
     String password = URLEncoder.encode(request.getParameter("password"), "utf-8");
     Cookie[] cookies = request.getCookies();
@@ -262,7 +262,7 @@
             }
         }
     }
-    User user = User.findByAccount(user_name);
+    User user = User.findByAccount(username);
 
 %>
 <div class="off-canvas-content">
