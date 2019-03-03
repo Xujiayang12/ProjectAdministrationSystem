@@ -43,6 +43,14 @@
         }
     }
     User user = User.findByAccount(user_name);
+    String user_project;
+    if(user.getProject() == 0)
+    {
+        user_project = "还未加入";
+    }
+    else {
+        user_project = Project.findById(user.getProject()).getName();
+    }
 %>
 <div class="info" style="background-color:#F8F9FA; ">
     <div class="panel panel-primary">
@@ -99,7 +107,7 @@
             <h3 class="panel-title">加入的项目</h3>
         </div>
         <div class="panel-body">
-            <%=user.getProject()%>
+            <%=user_project%>
         </div>
     </div>
 </div>

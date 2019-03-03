@@ -7,23 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7baef1a1-e308-41a2-9457-a13823dfa064" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/info/Project.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/MyInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/MyInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/SetProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/SetProject.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/MyInfo.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/classes/info/Configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/classes/info/Configuration.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/classes/info/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/classes/info/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/classes/info/sqlxml/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/DEMO1_war_exploded/WEB-INF/classes/info/sqlxml/User.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DEMO1/info/Configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DEMO1/info/Configuration.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DEMO1/info/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DEMO1/info/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/DEMO1/info/sqlxml/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DEMO1/info/sqlxml/User.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/Configuration.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/Configuration.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/sqlxml/User.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/sqlxml/User.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/MyInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/MyInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/SetProject.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/SetProject.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/MyInfo.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/signup.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/signup.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -116,7 +101,7 @@
           <entry key="class" value="1" />
           <entry key="java" value="11" />
           <entry key="jpg" value="1" />
-          <entry key="jsp" value="26" />
+          <entry key="jsp" value="27" />
           <entry key="png" value="1" />
           <entry key="project" value="3" />
           <entry key="sql" value="3" />
@@ -132,7 +117,7 @@
           <entry key="Database Element" value="8" />
           <entry key="Image" value="2" />
           <entry key="JAVA" value="11" />
-          <entry key="JSP" value="26" />
+          <entry key="JSP" value="27" />
           <entry key="Manifest" value="1" />
           <entry key="Scratch" value="3" />
           <entry key="XML" value="12" />
@@ -142,7 +127,7 @@
         <counts>
           <entry key="cell" value="21" />
           <entry key="java" value="3687" />
-          <entry key="jsp" value="1463" />
+          <entry key="jsp" value="1570" />
           <entry key="sql" value="171" />
           <entry key="xml" value="1224" />
         </counts>
@@ -150,7 +135,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="3687" />
-          <entry key="JSP" value="1463" />
+          <entry key="JSP" value="1570" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="192" />
           <entry key="XML" value="1222" />
@@ -159,124 +144,113 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.57698673">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/info/User.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="388">
-                  <caret line="259" column="37" lean-forward="true" selection-start-line="259" selection-start-column="37" selection-end-line="259" selection-end-column="37" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#7450#7451#0" expanded="true" />
-                    <element signature="e#7519#7520#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/MyInfo.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="441">
-                  <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="das://0327f1de-5da4-4c1f-a629-edadd094957e/schema/main/table/project">
-              <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-                <state>
-                  <filtering enabled="true" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/web/main.jsp">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="395">
-                  <caret line="348" column="78" selection-start-line="348" selection-start-column="78" selection-end-line="348" selection-end-column="78" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/info/Project.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="303">
-                  <caret line="145" column="64" selection-start-line="145" selection-start-column="64" selection-end-line="145" selection-end-column="64" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#154#155#0" expanded="true" />
-                    <element signature="e#179#180#0" expanded="true" />
-                    <element signature="e#210#211#0" expanded="true" />
-                    <element signature="e#237#238#0" expanded="true" />
-                    <element signature="e#273#274#0" expanded="true" />
-                    <element signature="e#305#306#0" expanded="true" />
-                    <element signature="e#338#339#0" expanded="true" />
-                    <element signature="e#367#368#0" expanded="true" />
-                    <element signature="e#400#401#0" expanded="true" />
-                    <element signature="e#429#430#0" expanded="true" />
-                    <element signature="e#460#461#0" expanded="true" />
-                    <element signature="e#487#488#0" expanded="true" />
-                    <element signature="e#518#519#0" expanded="true" />
-                    <element signature="e#545#546#0" expanded="true" />
-                    <element signature="e#584#585#0" expanded="true" />
-                    <element signature="e#619#620#0" expanded="true" />
-                    <element signature="e#652#653#0" expanded="true" />
-                    <element signature="e#680#681#0" expanded="true" />
-                    <element signature="e#720#721#0" expanded="true" />
-                    <element signature="e#752#753#0" expanded="true" />
-                    <element signature="e#802#803#0" expanded="true" />
-                    <element signature="e#844#845#0" expanded="true" />
-                    <element signature="e#888#889#0" expanded="true" />
-                    <element signature="e#924#925#0" expanded="true" />
-                    <element signature="e#968#969#0" expanded="true" />
-                    <element signature="e#1004#1005#0" expanded="true" />
-                    <element signature="e#1044#1045#0" expanded="true" />
-                    <element signature="e#1076#1077#0" expanded="true" />
-                    <element signature="e#1116#1117#0" expanded="true" />
-                    <element signature="e#1148#1149#0" expanded="true" />
-                    <element signature="e#1204#1205#0" expanded="true" />
-                    <element signature="e#1252#1253#0" expanded="true" />
-                    <element signature="e#1938#1939#0" expanded="true" />
-                    <element signature="e#1959#1960#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/info/sqlxml/Project.xml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="510">
-                  <caret line="30" column="26" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="26" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/info/User.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1793">
-                  <caret line="258" column="19" lean-forward="true" selection-start-line="258" selection-start-column="19" selection-end-line="258" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="388">
+              <caret line="259" column="37" lean-forward="true" selection-start-line="259" selection-start-column="37" selection-end-line="259" selection-end-column="37" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#7450#7451#0" expanded="true" />
+                <element signature="e#7519#7520#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/MyInfo.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1853">
+              <caret line="109" column="29" lean-forward="true" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://0327f1de-5da4-4c1f-a629-edadd094957e/schema/main/table/project">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/main.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="395">
+              <caret line="348" column="78" selection-start-line="348" selection-start-column="78" selection-end-line="348" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/signup.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="449">
+              <caret line="330" column="49" lean-forward="true" selection-start-line="330" selection-start-column="49" selection-end-line="330" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/Project.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="473">
+              <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#154#155#0" expanded="true" />
+                <element signature="e#179#180#0" expanded="true" />
+                <element signature="e#210#211#0" expanded="true" />
+                <element signature="e#237#238#0" expanded="true" />
+                <element signature="e#273#274#0" expanded="true" />
+                <element signature="e#305#306#0" expanded="true" />
+                <element signature="e#338#339#0" expanded="true" />
+                <element signature="e#367#368#0" expanded="true" />
+                <element signature="e#400#401#0" expanded="true" />
+                <element signature="e#429#430#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#487#488#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#545#546#0" expanded="true" />
+                <element signature="e#584#585#0" expanded="true" />
+                <element signature="e#619#620#0" expanded="true" />
+                <element signature="e#652#653#0" expanded="true" />
+                <element signature="e#680#681#0" expanded="true" />
+                <element signature="e#720#721#0" expanded="true" />
+                <element signature="e#752#753#0" expanded="true" />
+                <element signature="e#802#803#0" expanded="true" />
+                <element signature="e#844#845#0" expanded="true" />
+                <element signature="e#888#889#0" expanded="true" />
+                <element signature="e#924#925#0" expanded="true" />
+                <element signature="e#968#969#0" expanded="true" />
+                <element signature="e#1004#1005#0" expanded="true" />
+                <element signature="e#1044#1045#0" expanded="true" />
+                <element signature="e#1076#1077#0" expanded="true" />
+                <element signature="e#1116#1117#0" expanded="true" />
+                <element signature="e#1148#1149#0" expanded="true" />
+                <element signature="e#1204#1205#0" expanded="true" />
+                <element signature="e#1252#1253#0" expanded="true" />
+                <element signature="e#1938#1939#0" expanded="true" />
+                <element signature="e#1959#1960#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/sqlxml/Project.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="30" column="26" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -320,17 +294,17 @@
         <option value="$PROJECT_DIR$/web/handlelogin.jsp" />
         <option value="$PROJECT_DIR$/web/dosignup.jsp" />
         <option value="$PROJECT_DIR$/src/info/DBAccess.java" />
-        <option value="$PROJECT_DIR$/web/signup.jsp" />
         <option value="$PROJECT_DIR$/web/WEB-INF/MyInfo.jsp" />
         <option value="$PROJECT_DIR$/web/userinfo.jsp" />
         <option value="$PROJECT_DIR$/web/SetProject.jsp" />
-        <option value="$PROJECT_DIR$/web/MyInfo.jsp" />
         <option value="$PROJECT_DIR$/web/main.jsp" />
         <option value="$PROJECT_DIR$/src/info/sqlxml/User.xml" />
         <option value="$PROJECT_DIR$/src/info/User.java" />
         <option value="$PROJECT_DIR$/src/info/Configuration.xml" />
         <option value="$PROJECT_DIR$/src/info/sqlxml/Project.xml" />
         <option value="$PROJECT_DIR$/src/info/Project.java" />
+        <option value="$PROJECT_DIR$/web/MyInfo.jsp" />
+        <option value="$PROJECT_DIR$/web/signup.jsp" />
       </list>
     </option>
   </component>
@@ -407,7 +381,7 @@
     <property name="DatabaseDriversLRU" value="sqlite" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551626168083" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551628371438" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/web/WEB-INF/lib/mybatis-3.2.7.jar!/" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -436,7 +410,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Project">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7.0.93">
     <configuration name="Info" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="info.Info" />
       <module name="DEMO1" />
@@ -604,12 +578,12 @@
       <workItem from="1551595563351" duration="4442000" />
       <workItem from="1551600120428" duration="12687000" />
       <workItem from="1551616061035" duration="5766000" />
-      <workItem from="1551622899688" duration="4500000" />
+      <workItem from="1551622899688" duration="5205000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78511000" />
+    <option name="totallyTimeSpent" value="79216000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -624,7 +598,7 @@
     <frame x="0" y="0" width="1920" height="1044" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12686567" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12686567" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -634,7 +608,7 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32893288" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21672167" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.33553356" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39933994" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -751,16 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/signup.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="534">
-          <caret line="308" column="133" lean-forward="true" selection-start-line="308" selection-start-column="133" selection-end-line="308" selection-end-column="133" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#main#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/login.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4250">
@@ -799,20 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/main.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="348" column="78" selection-start-line="348" selection-start-column="78" selection-end-line="348" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/MyInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="441">
-          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/sqlxml/User.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="474">
@@ -841,8 +791,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/info/Project.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="145" column="64" selection-start-line="145" selection-start-column="64" selection-end-line="145" selection-end-column="64" />
+        <state relative-caret-position="473">
+          <caret line="155" lean-forward="true" selection-start-line="155" selection-end-line="155" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#154#155#0" expanded="true" />
@@ -880,6 +830,27 @@
             <element signature="e#1938#1939#0" expanded="true" />
             <element signature="e#1959#1960#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/MyInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1853">
+          <caret line="109" column="29" lean-forward="true" selection-start-line="109" selection-start-column="29" selection-end-line="109" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/main.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="348" column="78" selection-start-line="348" selection-start-column="78" selection-end-line="348" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/signup.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="330" column="49" lean-forward="true" selection-start-line="330" selection-start-column="49" selection-end-line="330" selection-end-column="49" />
         </state>
       </provider>
     </entry>

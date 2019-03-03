@@ -327,6 +327,7 @@
                                             <option value="软工4班">软工4班</option>
                                             <option value="软工5班">软工5班</option>
                                             <option value="软工6班">软工6班</option>
+                                            <option value="双学位">双学位</option>
                                         </select>
                                     </div>
                                 </div>

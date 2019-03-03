@@ -46,7 +46,7 @@
 
     <mappers>
         <mapper resource="info/sqlxml/User.xml"/>
-        <mapper resource="info/sqlxml/User.xml"/>
+        <mapper resource="info/sqlxml/Project.xml"/>
     </mappers>
 
 </configuration>
