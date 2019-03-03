@@ -5,7 +5,7 @@
   Time: 下午6:18
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" import="java.util.*,java.net.*,test.Info" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" import="java.util.*,java.net.*,info.*" contentType="text/html; charset=utf-8"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -20,8 +20,7 @@
     String username = URLEncoder.encode(request.getParameter("username"),"utf-8");
     //使用URLEncoder解决无法在Cookie当中保存中文字符串问题
     String password = URLEncoder.encode(request.getParameter("password"),"utf-8");
-    Info user_info = new Info(username,password);
-    if(user_info.check_account()){
+    if(User.loginCheck(username,password)){
         String[] isUseCookies = request.getParameterValues("isUseCookie");
         if(isUseCookies!=null&&isUseCookies.length>0)
         {

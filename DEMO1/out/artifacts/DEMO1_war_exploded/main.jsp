@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,java.net.*" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" import="java.util.*,java.net.*,info.*" contentType="text/html; charset=utf-8"%>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -277,9 +277,10 @@
 <body>
 <%
     request.setCharacterEncoding("utf-8");
-    String username="";
-    String password = "";
-    String user_name = URLEncoder.encode(request.getParameter("username"),"utf-8");
+    String user_name="";
+    String pass_word = "";
+    String username = URLEncoder.encode(request.getParameter("username"),"utf-8");
+    String password = URLEncoder.encode(request.getParameter("password"),"utf-8");
     Cookie[] cookies = request.getCookies();
     if(cookies!=null&&cookies.length>0)
     {
@@ -287,14 +288,15 @@
         {
             if(c.getName().equals("username"))
             {
-                username = URLDecoder.decode(c.getValue(),"utf-8");
+                user_name = URLDecoder.decode(c.getValue(),"utf-8");
             }
             if(c.getName().equals("password"))
             {
-                password = URLDecoder.decode(c.getValue(),"utf-8");
+                pass_word = URLDecoder.decode(c.getValue(),"utf-8");
             }
         }
     }
+    String name = User.getAllInfo(username,password).getName();
 %>
 <div class="off-canvas off-canvas-sidebar-show">
     <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
@@ -308,8 +310,7 @@
                 <span class="h4 text-center">项目文档管理系统</span>
                 <div class="divider"></div>
                 <li class="nav-item">
-                    <a href="MyProject.jsp" target="main">
-                        <i class="icon material-icons sidebar-icons">person</i>帐号：<%=user_name %></a></li>
+                    <a href="MyInfo.jsp" target="main">用户名：<%=name %></a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="MyProject.jsp" target="main">

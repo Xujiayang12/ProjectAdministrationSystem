@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <title>项目文档管理系统</title>
+    <title>项目文档管理系统 - 登录</title>
     <link rel="icon shortcut" type="image/ico" href="https://st.nfz.yecdn.com/favicon.ico">
     <link rel="icon" href="https://st.nfz.yecdn.com/favicon.png">
     <meta name="format-detection" content="telephone=no">
@@ -34,44 +34,48 @@
         jsnamemap: {},
         cssnamemap: {}
     },
-        lsloader.removeLS = function(e) {
+        lsloader.removeLS = function (e) {
             try {
                 localStorage.removeItem(e)
-            } catch(e) {}
+            } catch (e) {
+            }
         },
-        lsloader.setLS = function(e, s) {
+        lsloader.setLS = function (e, s) {
             try {
                 localStorage.setItem(e, s)
-            } catch(e) {}
+            } catch (e) {
+            }
         },
-        lsloader.getLS = function(e) {
+        lsloader.getLS = function (e) {
             var s = "";
             try {
                 s = localStorage.getItem(e)
-            } catch(e) {
+            } catch (e) {
                 s = ""
             }
             return s
         },
         versionString = "/*" + (window.materialVersion || "unknownVersion") + "*/",
-        lsloader.clean = function() {
+        lsloader.clean = function () {
             var e, s;
             try {
                 for (e = [], s = 0; s < localStorage.length; s++) e.push(localStorage.key(s));
-                e.forEach(function(e) {
+                e.forEach(function (e) {
                     var s = lsloader.getLS(e);
-                    window.oldVersion && window.oldVersion.reduce(function(e, t) {
+                    window.oldVersion && window.oldVersion.reduce(function (e, t) {
                             return e || -1 !== s.indexOf("/*" + t + "*/")
                         },
                         !1) && lsloader.removeLS(e)
                 })
-            } catch(e) {}
+            } catch (e) {
+            }
         },
         lsloader.clean(),
-        lsloader.load = function(e, s, t, n) {
+        lsloader.load = function (e, s, t, n) {
             var o;
             if ("boolean" == typeof t && (n = t, t = void 0), n = n || !1, t = t ||
-                function() {},
+                function () {
+                },
             (o = this.getLS(e)) && -1 === o.indexOf(versionString)) return this.removeLS(e),
                 void this.requestResource(e, s, t, n);
             if (o) {
@@ -85,77 +89,80 @@
                     }), this.runjs(s, e, o)) : (document.getElementById(e).appendChild(document.createTextNode(o)), t())
             } else this.requestResource(e, s, t, n)
         },
-        lsloader.requestResource = function(e, s, t, n) {
+        lsloader.requestResource = function (e, s, t, n) {
             var o = this;
             n ? this.iojs(s, e,
-                function(e, s, t) {
+                function (e, s, t) {
                     o.setLS(s, e + versionString + t),
                         o.runjs(e, s, t)
                 }) : this.iocss(s, e,
-                function(t) {
+                function (t) {
                     document.getElementById(e).appendChild(document.createTextNode(t)),
                         o.setLS(e, s + versionString + t)
                 },
                 t)
         },
-        lsloader.iojs = function(e, s, t) {
+        lsloader.iojs = function (e, s, t) {
             var n, o = this;
             o.jsRunSequence.push({
                 name: s,
                 code: ""
             });
-            try { (n = new XMLHttpRequest).open("get", e, !0),
-                n.onreadystatechange = function() {
-                    if (4 == n.readyState) {
-                        if ((n.status >= 200 && n.status < 300 || 304 == n.status) && "" != n.response) return void t(e, s, n.response);
-                        o.jsfallback(e, s)
-                    }
-                },
-                n.send(null)
-            } catch(t) {
+            try {
+                (n = new XMLHttpRequest).open("get", e, !0),
+                    n.onreadystatechange = function () {
+                        if (4 == n.readyState) {
+                            if ((n.status >= 200 && n.status < 300 || 304 == n.status) && "" != n.response) return void t(e, s, n.response);
+                            o.jsfallback(e, s)
+                        }
+                    },
+                    n.send(null)
+            } catch (t) {
                 o.jsfallback(e, s)
             }
         },
-        lsloader.iocss = function(e, s, t, n) {
+        lsloader.iocss = function (e, s, t, n) {
             var o, a = this;
-            try { (o = new XMLHttpRequest).open("get", e, !0),
-                o.onreadystatechange = function() {
-                    if (4 == o.readyState) {
-                        if ((o.status >= 200 && o.status < 300 || 304 == o.status) && "" != o.response) return t(o.response),
-                            void n();
-                        a.cssfallback(e, s, n)
-                    }
-                },
-                o.send(null)
-            } catch(t) {
+            try {
+                (o = new XMLHttpRequest).open("get", e, !0),
+                    o.onreadystatechange = function () {
+                        if (4 == o.readyState) {
+                            if ((o.status >= 200 && o.status < 300 || 304 == o.status) && "" != o.response) return t(o.response),
+                                void n();
+                            a.cssfallback(e, s, n)
+                        }
+                    },
+                    o.send(null)
+            } catch (t) {
                 a.cssfallback(e, s, n)
             }
         },
-        lsloader.iofonts = function(e, s, t, n) {
+        lsloader.iofonts = function (e, s, t, n) {
             var o, a = this;
-            try { (o = new XMLHttpRequest).open("get", e, !0),
-                o.onreadystatechange = function() {
-                    if (4 == o.readyState) {
-                        if ((o.status >= 200 && o.status < 300 || 304 == o.status) && "" != o.response) return t(o.response),
-                            void n();
-                        a.cssfallback(e, s, n)
-                    }
-                },
-                o.send(null)
-            } catch(t) {
+            try {
+                (o = new XMLHttpRequest).open("get", e, !0),
+                    o.onreadystatechange = function () {
+                        if (4 == o.readyState) {
+                            if ((o.status >= 200 && o.status < 300 || 304 == o.status) && "" != o.response) return t(o.response),
+                                void n();
+                            a.cssfallback(e, s, n)
+                        }
+                    },
+                    o.send(null)
+            } catch (t) {
                 a.cssfallback(e, s, n)
             }
         },
-        lsloader.runjs = function(e, s, t) {
+        lsloader.runjs = function (e, s, t) {
             var n, o, a;
             if (s && t) for (n in this.jsRunSequence) this.jsRunSequence[n].name == s && (this.jsRunSequence[n].code = t);
-            this.jsRunSequence[0] && this.jsRunSequence[0].code && "failed" != this.jsRunSequence[0].status ? ((o = document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)), o.type = "text/javascript", document.getElementsByTagName("head")[0].appendChild(o), this.jsRunSequence.shift(), this.jsRunSequence.length > 0 && this.runjs()) : this.jsRunSequence[0] && "failed" == this.jsRunSequence[0].status && (a = this, (o = document.createElement("script")).src = this.jsRunSequence[0].path, o.type = "text/javascript", this.jsRunSequence[0].status = "loading", o.onload = function() {
+            this.jsRunSequence[0] && this.jsRunSequence[0].code && "failed" != this.jsRunSequence[0].status ? ((o = document.createElement("script")).appendChild(document.createTextNode(this.jsRunSequence[0].code)), o.type = "text/javascript", document.getElementsByTagName("head")[0].appendChild(o), this.jsRunSequence.shift(), this.jsRunSequence.length > 0 && this.runjs()) : this.jsRunSequence[0] && "failed" == this.jsRunSequence[0].status && (a = this, (o = document.createElement("script")).src = this.jsRunSequence[0].path, o.type = "text/javascript", this.jsRunSequence[0].status = "loading", o.onload = function () {
                 a.jsRunSequence.shift(),
                 a.jsRunSequence.length > 0 && a.runjs()
             },
                 document.body.appendChild(o))
         },
-        lsloader.tagLoad = function(e, s) {
+        lsloader.tagLoad = function (e, s) {
             this.jsRunSequence.push({
                 name: s,
                 code: "",
@@ -164,17 +171,17 @@
             }),
                 this.runjs()
         },
-        lsloader.jsfallback = function(e, s) {
+        lsloader.jsfallback = function (e, s) {
             if (!this.jsnamemap[s]) {
                 for (var t in this.jsnamemap[s] = s, this.jsRunSequence) this.jsRunSequence[t].name == s && (this.jsRunSequence[t].code = "", this.jsRunSequence[t].status = "failed", this.jsRunSequence[t].path = e);
                 this.runjs()
             }
         },
-        lsloader.cssfallback = function(e, s, t) {
+        lsloader.cssfallback = function (e, s, t) {
             var n, o;
             this.cssnamemap[s] || (this.cssnamemap[s] = 1, (n = document.createElement("link")).type = "text/css", n.href = e, n.rel = "stylesheet", n.onload = n.onerror = t, (o = document.getElementsByTagName("script")[0]).parentNode.insertBefore(n, o))
         },
-        lsloader.runInlineScript = function(e, s) {
+        lsloader.runInlineScript = function (e, s) {
             var t = document.getElementById(s).innerText;
             this.jsRunSequence.push({
                 name: e,
@@ -182,39 +189,40 @@
             }),
                 this.runjs()
         },
-        lsloader.css = function(e, s) {
+        lsloader.css = function (e, s) {
             void 0 === window.lsLoadCSSMaxNums && (window.lsLoadCSSMaxNums = 0),
                 window.lsLoadCSSMaxNums++,
                 lsloader.load(e, s,
-                    function() {
+                    function () {
                         void 0 === window.lsLoadCSSNums && (window.lsLoadCSSNums = 0),
                             window.lsLoadCSSNums++,
                         window.lsLoadCSSNums == window.lsLoadCSSMaxNums && (document.documentElement.style.display = "")
                     },
                     !1)
         },
-        lsloader.js = function(e, s) {
+        lsloader.js = function (e, s) {
             lsloader.load(e, s, !0)
         }</script>
     <script>function Queue() {
         this.dataStore = [],
-            this.offer = function(e) {
+            this.offer = function (e) {
                 this.debug && console.log("Offered a Queued Function.");
                 "function" == typeof e ? this.dataStore.push(e) : console.log("You must offer a function.")
             },
-            this.poll = function() {
+            this.poll = function () {
                 this.debug && console.log("Polled a Queued Function.");
                 return this.dataStore.shift()
             },
-            this.execNext = function() {
+            this.execNext = function () {
                 var e = this.poll();
                 void 0 !== e && (this.debug && console.log("Run a Queued Function."), e())
             },
             this.debug = !1,
-            this.startDebug = function() {
+            this.startDebug = function () {
                 this.debug = !0
             }
     }
+
     var queue = new Queue</script>
     <style id="spectre_css"></style>
     <script>lsloader.css("spectre_css", "https://st.nfz.yecdn.com/blog.nfz.moe/libs/spectre/spectre.min.css")</script>
@@ -224,27 +232,26 @@
     <script>lsloader.css("style_css", "https://st.nfz.yecdn.com/blog.nfz.moe/css/styles.min.css")</script>
     <style id="prism_css"></style>
     <script>lsloader.css("prism_css", "https://st.nfz.yecdn.com/blog.nfz.moe/css/prism.min.css")</script>
-    <style>body,html{overflow-x:hidden!important}</style>
+    <style>body, html {
+        overflow-x: hidden !important
+    }</style>
     <link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
-    <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+    <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
+</head>
 
 <body>
 <%
     request.setCharacterEncoding("utf-8");
-    String username="";
+    String username = "";
     String password = "";
     Cookie[] cookies = request.getCookies();
-    if(cookies!=null&&cookies.length>0)
-    {
-        for(Cookie c:cookies)
-        {
-            if(c.getName().equals("username"))
-            {
-                username = URLDecoder.decode(c.getValue(),"utf-8");
+    if (cookies != null && cookies.length > 0) {
+        for (Cookie c : cookies) {
+            if (c.getName().equals("username")) {
+                username = URLDecoder.decode(c.getValue(), "utf-8");
             }
-            if(c.getName().equals("password"))
-            {
-                password = URLDecoder.decode(c.getValue(),"utf-8");
+            if (c.getName().equals("password")) {
+                password = URLDecoder.decode(c.getValue(), "utf-8");
             }
         }
     }
@@ -263,7 +270,9 @@
                 <li class="nav-item">
                     <a href="login.jsp">
                         <i class="icon material-icons sidebar-icons">home</i>登陆</a></li>
-                </li>
+                <li class="nav-item">
+                    <a href="signup.jsp">
+                        <i class="icon material-icons sidebar-icons">bookmark</i>注册</a></li>
             </ul>
         </div>
     </div>
@@ -278,22 +287,26 @@
                                 <p>项目文档管理系统</p>
                             </div>
                             <div class="card-footer bg-gray hide-xs">
-                                <div class="card-title">请登录</div></div>
+                                <div class="card-title">请登录</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs" style="border-color: transparent;background-color: transparent;">
-                        <form action="handlelogin.jsp" method="post" style="border-color: transparent;background-color: transparent;">
-                            <div class="weui-form-preview" style="border-color: transparent;background-color: transparent;">
+                    <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs"
+                         style="border-color: transparent;background-color: transparent;">
+                        <form action="handlelogin.jsp" method="post"
+                              style="border-color: transparent;background-color: transparent;">
+                            <div class="weui-form-preview"
+                                 style="border-color: transparent;background-color: transparent;">
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">帐号</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type ="text" name ="username" />
+                                        <input class="weui-input" type="text" name="username"/>
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type ="password" name ="password" />
+                                        <input class="weui-input" type="password" name="password"/>
                                     </div>
                                 </div>
                                 <div class="weui-form-preview__bd">
@@ -301,24 +314,21 @@
                                         <span class="weui-form-preview__value">建议使用Google浏览器</span>
                                     </div>
                                 </div>
+                                <label for="weuiAgree" class="weui-agree">
+                                    <input id="weuiAgree" type="checkbox" class="weui-agree__checkbox"
+                                           name="isUseCookie" id="s11" checked="checked">
+                                    <span class="weui-agree__text">十天内记住我</span>
+                                </label>
                                 <div class="weui-form-preview__ft">
-                                    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary" href="javascript:">登录</button>
-                                    <button class="weui-form-preview__btn weui-form-preview__btn_default" href="javascript:">注册</button>
-                                </div>
-                                <div class="weui-cells weui-cells_checkbox" style="border-color: transparent;background-color: transparent;">
-                                    <label class="weui-cell weui-check__label" for="s11">
-                                        <div class="weui-cell__hd">
-                                            <input type="checkbox" class="weui-check" name="isUseCookie" id="s11" checked="checked">
-                                            <i class="weui-icon-checked"></i>
-                                        </div>
-                                        <div class="weui-cell__bd">
-                                            <p>十天内记住我</p>
-                                        </div>
-                                    </label>
+                                    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_primary"
+                                            href="javascript:">登录
+                                    </button>
+                                    <a class="weui-form-preview__btn weui-form-preview__btn_default"
+                                            href="signup.jsp">注册
+                                    </a>
                                 </div>
                             </div>
                         </form>
-
                     </div>
                 </div>
             </div>
@@ -340,18 +350,19 @@
           queue.execNext();
         },
         200);
-      };</script>
+      };
+</script>
 <script type="text/javascript">var copyrightNow = (new Date).getFullYear(),
     textContent = document.querySelector("span[year]");
 copyrightSince = 2016,
-    copyrightSince === copyrightNow ? textContent.textContent = copyrightNow: textContent.textContent = copyrightSince + " - " + copyrightNow</script>
+    copyrightSince === copyrightNow ? textContent.textContent = copyrightNow : textContent.textContent = copyrightSince + " - " + copyrightNow</script>
 <script>!
-    function() {
+    function () {
         for (var e = document.querySelectorAll('script[type="text/ls-javascript"]'), r = 0; r < e.length; ++r) {
             var n = e[r];
             lsloader.runInlineScript(n.id, n.id)
         }
-    } (),
+    }(),
     console.log(" \n %c Spectre Theme | © neoFelhz | Verision 180330 %c https://github.com/neoFelhz/hexo-theme-spectre ", "color: #fff; background-image: linear-gradient(90deg, rgb(236, 61, 1213) 0%, rgb(94, 108, 198) 100%); padding:5px 1px;", "background-image: linear-gradient(90deg, rgb(94, 108, 198) 0%, rgb(194, 194, 194) 0%); padding:5px 0;")</script>
 </body>
 
