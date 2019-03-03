@@ -2,6 +2,7 @@ package info;
 
 import org.apache.ibatis.session.SqlSession;
 
+import java.beans.Transient;
 import java.io.IOException;
 import java.util.List;
 
@@ -81,7 +82,70 @@ public class User {
         this.project = project;
     }
 
-    public static User getAllInfo(String account, String password){//可直接调用的方法，获取信息 返回User
+    public void setAllWhenSignUp(String account, String name, String password, String classroom, String qq, String phone) {
+        this.account = account;
+        this.name = name;
+        this.password = password;
+        this.classroom = classroom;
+        this.qq = qq;
+        this.phone = phone;
+    }
+
+    public static User findById(int id) {//通过Id寻找用户 返回User类
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            List<User> Userlist = sqlSession.selectList("User.findById", id);
+            return Userlist.get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static User findByAccount(String account) {//通过account寻找用户，返回User类
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            List<User> Userlist = sqlSession.selectList("User.findByAccount", account);
+            return Userlist.get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static List<User> findAll() {//列出所有用户，返回User集合
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            List<User> Userlist = sqlSession.selectList("User.findAll");
+//            for(User u:Userlist){
+//                System.out.println(u);
+//            }
+            return Userlist;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static User getAllInfo(String account, String password) {//可直接调用的方法，获取信息 返回User
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
         User result = null;
@@ -102,6 +166,51 @@ public class User {
         return result;
     }
 
+
+    public static boolean signUp(String account, String name, String password, String classroom, String qq, String phone) {
+        DBAccess dbAccess = new DBAccess();//注册
+        SqlSession sqlSession = null;
+        try {
+            if (isAccountExist(account)) return false;
+            else {
+                sqlSession = dbAccess.getSqlsession();
+                User u = new User();
+                u.setAllWhenSignUp(account, name, password, classroom, qq, phone);
+                sqlSession.insert("User.signUp", u);
+                sqlSession.commit();
+                return true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static boolean isAccountExist(String account) {
+        DBAccess dbAccess = new DBAccess();//检测帐号是否存在
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            User u = new User();
+            u.setAccount(account);
+            List<User> Userlist = sqlSession.selectList("User.isAccountExist", u);
+            if (Userlist.size() >= 1)
+                return true;
+            else return false;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
     public static boolean loginCheck(String account, String password) {//可直接调用的方法，判断是否密码错误
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
@@ -116,33 +225,47 @@ public class User {
             else return false;
         } catch (IOException e) {
             e.printStackTrace();
+            return false;
         } finally {
             if (sqlSession != null) {
                 sqlSession.close();
             }
         }
-        return true;
+    }
+
+    public static void deleteById(int id){
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            sqlSession.delete("User.deleteById",id);
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static void updateById(User u){
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            sqlSession.update("User.updateById",u);
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
     }
 
     public static void main(String args[]) {
-//        DBAccess dbAccess = new DBAccess();
-//        SqlSession sqlSession = null;
-//        try {
-//            sqlSession = dbAccess.getSqlsession();
-//            User u = new User();
-//            u.setAccount("admin");
-//            u.setPassword("admin");
-//            List<User> Userlist = sqlSession.selectList("User.loginCheck", u);
-//            System.out.println(Userlist.size());
-//            for (User p : Userlist) {
-//                System.out.println(p.account);
-//            }
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        } finally {
-//            if (sqlSession != null) {
-//                sqlSession.close();
-//            }
-//        }
+        System.out.println(findByAccount("admin").getAdmin());
     }
 }

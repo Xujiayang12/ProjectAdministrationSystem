@@ -18,36 +18,71 @@
 -->
 
 <!DOCTYPE mapper
-    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="User">
 
-  <resultMap type="info.User" id="UserResult">
-    <id column="id" jdbcType="INTEGER" property="id"/>
-    <result column="account" jdbcType="VARCHAR" property="account"/>
-    <result column="password" jdbcType="VARCHAR" property="password"/>
-    <result column="name" jdbcType="VARCHAR" property="name"/>
-    <result column="classroom" jdbcType="VARCHAR" property="classroom"/>
-    <result column="qq" jdbcType="VARCHAR" property="qq"/>
-    <result column="phone" jdbcType="VARCHAR" property="phone"/>
-    <result column="admin" jdbcType="INTEGER" property="admin"/>
-    <result column="project" jdbcType="INTEGER" property="project"/>
-  </resultMap>
+    <resultMap type="info.User" id="UserResult">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="account" jdbcType="VARCHAR" property="account"/>
+        <result column="password" jdbcType="VARCHAR" property="password"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="classroom" jdbcType="VARCHAR" property="classroom"/>
+        <result column="qq" jdbcType="VARCHAR" property="qq"/>
+        <result column="phone" jdbcType="VARCHAR" property="phone"/>
+        <result column="admin" jdbcType="INTEGER" property="admin"/>
+        <result column="project" jdbcType="INTEGER" property="project"/>
+    </resultMap>
 
-  <select id="loginCheck" parameterType="info.User" resultMap="UserResult">
+    <select id="loginCheck" parameterType="info.User" resultMap="UserResult">
     SELECT * FROM user WHERE account = #{account:VARCHAR} AND password = #{password:VARCHAR}
   </select>
 
-  <!--<select id="version" parameterType="long" resultType="int">-->
-    <!--SELECT version FROM user WHERE id = #{id,jdbcType=INTEGER}-->
-  <!--</select>-->
-    <!--WHERE account = #{account:VARCHAR} AND password = #{password:VARCHAR}-->
-  <!--<delete id="delete" parameterType="UserAlias">-->
-    <!--DELETE FROM user WHERE id = #{id:INTEGER}-->
-  <!--</delete>-->
+    <select id="isAccountExist" parameterType="info.User" resultMap="UserResult">
+    SELECT * FROM user WHERE account = #{account:VARCHAR}
+  </select>
 
-  <!--<insert id="insert" parameterType="UserAlias" useGeneratedKeys="false">-->
+    <select id="findAll" parameterType="info.User"  resultMap="UserResult">
+    SELECT * FROM user
+  </select>
+
+    <select id="findById" parameterType="int" resultMap="UserResult">
+    SELECT * FROM user where id = #{id:INTEGER}
+  </select>
+
+    <select id="findByAccount" parameterType="String" resultMap="UserResult">
+    SELECT * FROM user where account = #{account:VARCHAR}
+  </select>
+
+    <insert id="signUp" parameterType="info.User">
+    INSERT INTO user (account, name, password, classroom, qq, phone, admin, project) VALUES (#{account},#{name},#{password},#{classroom},#{qq},#{phone},0,0)
+  </insert>
+
+    <delete id="deleteById" parameterType="int">
+        DELETE FROM user WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteByAccount" parameterType="String" >
+        DELETE FROM user WHERE account = #{account}
+    </delete>
+
+    <update id="updateById" parameterType="info.User">
+        UPDATE user set name = #{name},password = #{password},classroom = #{classroom},qq = #{qq},phone = #{phone},admin = #{admin},project = #{project} where id = #{id};
+    </update>
+
+    <update id="updateByAccount" parameterType="info.User">
+        UPDATE user set name = #{name},password = #{password},classroom = #{classroom},qq = #{qq},phone = #{phone},admin = #{admin},project = #{project} where account = #{account};
+    </update>
+    <!--<select id="version" parameterType="long" resultType="int">-->
+    <!--SELECT version FROM user WHERE id = #{id,jdbcType=INTEGER}-->
+    <!--</select>-->
+    <!--WHERE account = #{account:VARCHAR} AND password = #{password:VARCHAR}-->
+    <!--<delete id="delete" parameterType="UserAlias">-->
+    <!--DELETE FROM user WHERE id = #{id:INTEGER}-->
+    <!--</delete>-->
+
+    <!--<insert id="insert" parameterType="UserAlias" useGeneratedKeys="false">-->
     <!--INSERT INTO user-->
     <!--( id,-->
     <!--username,-->
@@ -60,23 +95,23 @@
     <!--#{password.encrypted:VARCHAR},-->
     <!--#{administrator,jdbcType=BOOLEAN}-->
     <!--)-->
-  <!--</insert>-->
+    <!--</insert>-->
 
-  <!--<update id="update" parameterType="UserAlias">-->
+    <!--<update id="update" parameterType="UserAlias">-->
     <!--UPDATE user SET-->
     <!--username = #{username,jdbcType=VARCHAR},-->
     <!--password = #{password.encrypted,jdbcType=VARCHAR},-->
     <!--administrator = #{administrator,jdbcType=BOOLEAN}-->
     <!--WHERE-->
     <!--id = #{id,jdbcType=INTEGER}-->
-  <!--</update>-->
+    <!--</update>-->
 
-  <!--&lt;!&ndash;   Unique constraint check &ndash;&gt;-->
-  <!--<select id="isUniqueUsername" parameterType="map" resultType="boolean">-->
+    <!--&lt;!&ndash;   Unique constraint check &ndash;&gt;-->
+    <!--<select id="isUniqueUsername" parameterType="map" resultType="boolean">-->
     <!--SELECT (count(*) = 0)-->
     <!--FROM user-->
     <!--WHERE ((#{userId,jdbcType=BIGINT} IS NOT NULL AND id != #{userId,jdbcType=BIGINT}) OR #{userId,jdbcType=BIGINT} IS-->
     <!--NULL)  &lt;!&ndash; other than me &ndash;&gt;-->
     <!--AND (username = #{username,jdbcType=VARCHAR})-->
-  <!--</select>-->
+    <!--</select>-->
 </mapper>

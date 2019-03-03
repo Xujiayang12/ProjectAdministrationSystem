@@ -298,7 +298,7 @@
                             <div class="weui-form-preview"
                                  style="border-color: transparent;background-color: transparent;">
                                 <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                                    <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
                                     <div class="weui-cell__bd">
                                         <input class="weui-input" type="text" name="fullname"/>
                                     </div>
@@ -306,7 +306,7 @@
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">帐号</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="username" pattern="[0-9]*"/>
+                                        <input class="weui-input" type="text" name="username" pattern="[0-9]*" placeholder="仅数字，建议使用学号"/>
                                     </div>
                                 </div>
                                 <div class="weui-cell">
@@ -339,7 +339,7 @@
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="phone" pattern="[0-9]*"/>
+                                        <input class="weui-input" type="text" name="phone" pattern="[0-9]*" />
                                     </div>
                                 </div>
                                 <div class="weui-form-preview__ft">

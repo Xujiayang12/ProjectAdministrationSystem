@@ -310,7 +310,7 @@
                 <span class="h4 text-center">项目文档管理系统</span>
                 <div class="divider"></div>
                 <li class="nav-item">
-                    <a href="MyInfo.jsp" target="main">用户名：<%=name %></a></li>
+                    <a href="userinfo.jsp" target="main">姓名：<%=name %></a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="MyProject.jsp" target="main">
@@ -363,7 +363,7 @@ copyrightSince = 2016,
             lsloader.runInlineScript(n.id, n.id)
         }
     }(),
-    console.log("NMSL")</script>
+    console.log("2333")</script>
 </body>
 
 </html>

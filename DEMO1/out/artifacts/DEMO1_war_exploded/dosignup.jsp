@@ -23,11 +23,13 @@
     String classroom = URLEncoder.encode(request.getParameter("classroom"),"utf-8");
     String qq = URLEncoder.encode(request.getParameter("qq"),"utf-8");
     String phone = URLEncoder.encode(request.getParameter("phone"),"utf-8");
-    try {
-        SetValue.signup(fullname,username,password,classroom,qq,phone);
+    if(User.signUp(username,fullname,password,classroom,qq,phone))
+    {
         out.print("<script type='text/javascript'>alert('注册成功');document.location.href='login.jsp';</script>");
-    }catch(Exception e){
-        out.print("<script type='text/javascript'>alert('注册失败');document.location.href='login.jsp';</script>");
+    }
+    else
+    {
+        out.print("<script type='text/javascript'>alert('用户名已存在或其他原因导致注册失败');document.location.href='signup.jsp';</script>");
     }
 %>
 </body>
