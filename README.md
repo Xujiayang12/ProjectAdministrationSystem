@@ -4,10 +4,14 @@
 需要插件：tomcat
 主要文件：jsp文件
 
-`project.db(数据库文件)放在src文件夹下面，jdbc路径写成jdbc:sqlite:*:resource*:project.db
+`project.db(数据库文件)放在src文件夹下面，jdbc路径写成jdbc:sqlite::resource:project.db`
 
-#### 软件架构
-软件架构说明
+#### 特别说明
+`记得把jdbc和mybatis的库加载上去，在/DEMO1/web/WEB-INF/lib里面的两个jar`
+`复制两份，一份放在tomcat的lib文件夹里面，一份用eclipse加载进程序的libraries（运行库）`
+
+####建议的教程
+https://blog.csdn.net/tengxvincent/article/details/79754277
 
 
 #### 安装教程
