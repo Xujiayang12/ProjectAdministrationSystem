@@ -1,7 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-         pageEncoding="UTF-8" import="java.util.*,java.net.*" %>
+<%@ page language="java" import="java.util.*,java.net.*,info.*" contentType="text/html; charset=utf-8"%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html style="display:none">
+
 <head>
     <meta charset="utf-8">
     <script>window.materialVersion = "180330",
@@ -11,17 +15,13 @@
     <link rel="dns-prefetch" href="//s.nfz.yecdn.com">
     <link rel="preconnect" href="https://cdn.jsdelivr.net">
     <link rel="preconnect" href="https://s.nfz.yecdn.com">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/weui/1.1.3/style/weui.min.css">
-    <link rel="stylesheet" href="https://cdn.bootcss.com/jquery-weui/1.2.1/css/jquery-weui.min.css">
-    <script src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery-weui/1.2.1/js/jquery-weui.min.js"></script>
     <meta http-equiv="Content-Security-Policy" content="block-all-mixed-content">
     <script>(/eruda=true/.test(window.location) || "true" == localStorage.getItem("active-eruda")) && (document.write('<script src="https://cdn.jsdelivr.net/npm/eruda@1.4.3/eruda.min.js"><\/script>'), document.write("<script>eruda.init();<\/script>"))</script>
     <script>/vconsole=true/.test(window.location) && (document.write('<script src="https://cdn.jsdelivr.net/npm/vconsole@3.1.0/dist/vconsole.min.js"><\/script>'), document.write("<script>var vConsole = new VConsole();<\/script>"))</script>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <title>项目文档管理系统 - 注册</title>
+    <title>项目文档管理系统</title>
     <link rel="icon shortcut" type="image/ico" href="https://st.nfz.yecdn.com/favicon.ico">
     <link rel="icon" href="https://st.nfz.yecdn.com/favicon.png">
     <meta name="format-detection" content="telephone=no">
@@ -235,6 +235,41 @@
     <style>body, html {
         overflow-x: hidden !important
     }</style>
+    <link rel="canonical" href="https://blog.nfz.moe/">
+    <script type="application/ld+json">{
+        "@context": "http://schema.org",
+        "@type": "Blog",
+        "name": "neoFelhz&#39;s Blog",
+        "author": {
+          "@type": "Person",
+          "name": "neoFelhz",
+          "image": {
+            "@type": "ImageObject",
+            "url": "https://st.nfz.yecdn.com/img/avatar/icon-144x144.png"
+          },
+          "description": "Nothing can be done without paranoia."
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "neoFelhz&#39;s Blog",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://st.nfz.yecdn.com/favicon.png"
+          }
+        },
+        "url": "https://blog.nfz.moe",
+        "image": {
+          "@type": "ImageObject",
+          "url": "https://st.nfz.yecdn.com/favicon.png"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://blog.nfz.moe"
+        },
+        "keywords": "项目,文档,管理,系统",
+        "description": "项目文档管理系统"
+      }
+    </script>
     <link rel="stylesheet" href="/css/prism-solarizedlight.css" type="text/css">
     <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css">
 </head>
@@ -242,19 +277,26 @@
 <body>
 <%
     request.setCharacterEncoding("utf-8");
-    String username = "";
-    String password = "";
+    String user_name="";
+    String pass_word = "";
+    String username = URLEncoder.encode(request.getParameter("username"),"utf-8");
+    String password = URLEncoder.encode(request.getParameter("password"),"utf-8");
     Cookie[] cookies = request.getCookies();
-    if (cookies != null && cookies.length > 0) {
-        for (Cookie c : cookies) {
-            if (c.getName().equals("username")) {
-                username = URLDecoder.decode(c.getValue(), "utf-8");
+    if(cookies!=null&&cookies.length>0)
+    {
+        for(Cookie c:cookies)
+        {
+            if(c.getName().equals("username"))
+            {
+                user_name = URLDecoder.decode(c.getValue(),"utf-8");
             }
-            if (c.getName().equals("password")) {
-                password = URLDecoder.decode(c.getValue(), "utf-8");
+            if(c.getName().equals("password"))
+            {
+                pass_word = URLDecoder.decode(c.getValue(),"utf-8");
             }
         }
     }
+    User user = User.findByAccount(username);
 %>
 <div class="off-canvas off-canvas-sidebar-show">
     <a class="off-canvas-toggle btn btn-link btn-action" href="#sidebar">
@@ -268,97 +310,43 @@
                 <span class="h4 text-center">项目文档管理系统</span>
                 <div class="divider"></div>
                 <li class="nav-item">
-                    <a href="login.jsp">
-                        <i class="icon material-icons sidebar-icons">home</i>登陆</a></li>
+                    <a href="MyInfo.jsp" target="main">姓名：<%=user.getName() %>
+                        <%
+                            if(user.getAdmin()==1){
+                                out.print("(管理员)");
+                            }
+                            else {
+                                out.print("(普通用户)");
+                            }
+
+                        %>
+                    </a></li>
+                <div class="divider"></div>
                 <li class="nav-item">
-                    <a href="signup.jsp">
-                        <i class="icon material-icons sidebar-icons">bookmark</i>注册</a></li>
+                    <a href="admin_all_people.jsp" target="main">
+                        <i class="icon material-icons sidebar-icons">people</i>班级成员</a></li>
+                <li class="nav-item">
+                    <a href="SetProject.jsp" target="main">
+                        <i class="icon material-icons sidebar-icons">pages</i>班级项目</a></li>
+                <li class="nav-item">
+                    <a href="JoinProject.jsp" target="main">
+                        <i class="icon material-icons sidebar-icons">school</i>成绩管理</a></li>
+                <li class="nav-item">
+                    <a href="SeeProject.jsp" target="main">
+                        <i class="icon material-icons sidebar-icons">event_note</i>成绩统计</a></li>
+                <li class="nav-item">
+                    <a href="DeleteProject.jsp" target="main">
+                        <i class="icon material-icons sidebar-icons">delete</i>再想要什么</a></li>
+                <div class="divider"></div>
+                <li class="nav-item">
+                    <a href="quit.jsp" target="_top">
+                        <i class="icon material-icons sidebar-icons">exit_to_app</i>退出</a></li>
             </ul>
         </div>
     </div>
     <a class="off-canvas-overlay" href="#close"></a>
-    <div class="off-canvas-content">
-        <main>
-            <div class="container container-header">
-                <div class="columns">
-                    <div class="column col-xs-12 col-8 daily_pic">
-                        <div class="card">
-                            <div class="card-image" style="background-image:url(./static/d.jpg)">
-                                <p>项目文档管理系统</p>
-                            </div>
-                            <div class="card-footer bg-gray hide-xs">
-                                <div class="card-title">请注册</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="column col-xs-12 col-4 author_info card-footer bg-gray hide-xs"
-                         style="border-color: transparent;background-color: transparent;">
-                        <form action="dosignup.jsp" method="post"
-                              style="border-color: transparent;background-color: transparent;">
-                            <div class="weui-form-preview"
-                                 style="border-color: transparent;background-color: transparent;">
-                                <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
-                                    <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="fullname" required="required"/>
-                                    </div>
-                                </div>
-                                <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
-                                    <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="username" pattern="[0-9]*" placeholder="仅数字,无法再改" required="required"/>
-                                    </div>
-                                </div>
-                                <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
-                                    <div class="weui-cell__bd">
-                                        <input class="weui-input" type="password" name="password" required="required"/>
-                                    </div>
-                                </div>
-                                <div class="weui-cell weui-cell_select weui-cell_select-after">
-                                    <div class="weui-cell__hd">
-                                        <label class="weui-label">班级</label>
-                                    </div>
-                                    <div class="weui-cell__bd">
-                                        <select class="weui-select" name="classroom" required="required">
-                                            <option value="软工1班">软工1班</option>
-                                            <option value="软工2班">软工2班</option>
-                                            <option value="软工3班">软工3班</option>
-                                            <option value="软工4班">软工4班</option>
-                                            <option value="软工5班">软工5班</option>
-                                            <option value="软工6班">软工6班</option>
-                                            <option value="双学位">双学位</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">QQ</label></div>
-                                    <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="qq" pattern="[0-9]*" required="required"/>
-                                    </div>
-                                </div>
-                                <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
-                                    <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="phone" pattern="[0-9]*" required="required"/>
-                                    </div>
-                                </div>
-                                <div class="weui-form-preview__ft">
-                                    <button type="submit" class="weui-form-preview__btn weui-form-preview__btn_default"
-                                            href="javascript:">确认注册
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-
-                    </div>
-                </div>
-            </div>
-        </main>
-        <div class="back-to-top rounded">
-            <a href="#">
-                <i class="icon material-icons casino-icons">expand_less</i></a>
-        </div>
+    <div class="off-canvas-content" >
+        <iframe name="main" id="main" frameborder="0" scrolling="no" width="1000" height="1000" style="border-top-width:60px; border-color: transparent;"></iframe>
     </div>
 </div>
 <script>lsloader.js("lazy_js", "https://st.nfz.yecdn.com/blog.nfz.moe/libs/js/lazyload.min.js")</script>

@@ -25,6 +25,10 @@ public class User {
         return TextEdit.de_coder(classroom);
     }
 
+    public String getClassroom(int i) {
+        return classroom;
+    }
+
     public String getQq() {
         return qq;
     }
@@ -90,6 +94,11 @@ public class User {
         this.phone = phone;
     }
 
+    public String getProjectName()
+    {
+        return getProjectNameById(this.project);
+    }
+
     public static User findById(int id) {//通过Id寻找用户 返回User类
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
@@ -114,6 +123,24 @@ public class User {
             sqlSession = dbAccess.getSqlsession();
             List<User> Userlist = sqlSession.selectList("User.findByAccount", account);
             return Userlist.get(0);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static List<User> findAllByClass(String classroom)
+    {
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            List<User> Userlist = sqlSession.selectList("User.findByClass", classroom);
+            return Userlist;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -264,7 +291,24 @@ public class User {
         }
     }
 
+    public static String getProjectNameById(int id)
+    {
+        if(id == 0) return "无";
+        else {
+            Project a_p = Project.findById(id);
+            return a_p.getName();
+        }
+    }
+
     public static void main(String args[]) {
-        System.out.println(findByAccount("admin").getAdmin());
+        User user = User.findByAccount("admin");
+//        User user2 = User.findByAccount("0001");
+//        user.setClassroom(user2.getClassroom());
+//        User.updateById(user);
+        List<User> stulist = User.findAllByClass(user.getClassroom());
+        for(User u:stulist)
+        {
+            System.out.println(u.name);
+        }
     }
 }

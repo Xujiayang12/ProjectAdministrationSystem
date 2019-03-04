@@ -72,7 +72,7 @@
     </div>
     <div class="panel panel-success">
         <div class="panel-heading">
-            <h3 class="panel-title">帐号</h3>
+            <h3 class="panel-title">学号</h3>
         </div>
         <div class="panel-body">
             <%=user.getAccount()%>

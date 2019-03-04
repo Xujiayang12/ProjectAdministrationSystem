@@ -47,7 +47,11 @@
                 }
             }
         }
-        pageContext.forward("main.jsp");
+        User user = User.findByAccount(username);
+        if(user.getAdmin()==1)
+            pageContext.forward("admin.jsp");
+        else
+            pageContext.forward("main.jsp");
     }else{
         out.print("<script type='text/javascript'>alert('密码错误或者无此用户');document.location.href='login.jsp';</script>");
     }

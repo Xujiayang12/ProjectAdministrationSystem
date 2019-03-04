@@ -304,7 +304,7 @@
                                     </div>
                                 </div>
                                 <div class="weui-cell">
-                                    <div class="weui-cell__hd"><label class="weui-label">帐号</label></div>
+                                    <div class="weui-cell__hd"><label class="weui-label">学号</label></div>
                                     <div class="weui-cell__bd">
                                         <input class="weui-input" type="text" name="username" pattern="[0-9]*" placeholder="仅数字,无法再改" required="required"/>
                                     </div>

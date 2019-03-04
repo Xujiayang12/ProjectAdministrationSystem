@@ -44,7 +44,7 @@
       style="border-color: transparent;background-color: transparent;">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            <h3 class="panel-title">帐号</h3>
+            <h3 class="panel-title">学号</h3>
         </div>
         <div class="panel-body" style="font-size: large">
             <%=user.getAccount()%>
@@ -88,7 +88,7 @@
                aria-describedby="sizing-addon1" pattern="[0-9]*" required="required">
     </div>
     <br/>
-    <button type="submit" class="btn btn-success">编辑信息</button>
+    <button type="submit" class="btn btn-success">确认</button>
 </form>
 </body>
 </html>

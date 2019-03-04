@@ -327,20 +327,20 @@
                         <i class="icon material-icons sidebar-icons">person</i>我的项目</a></li>
                 <li class="nav-item">
                     <a href="SetProject.jsp" target="main">
-                        <i class="icon material-icons sidebar-icons">inbox</i>发布项目</a></li>
+                        <i class="icon material-icons sidebar-icons">cloud_upload</i>发布项目</a></li>
                 <li class="nav-item">
                     <a href="JoinProject.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">add</i>加入项目</a></li>
                 <li class="nav-item">
                     <a href="SeeProject.jsp" target="main">
-                        <i class="icon material-icons sidebar-icons">assistant</i>查看项目</a></li>
+                        <i class="icon material-icons sidebar-icons">comment</i>我的自评</a></li>
                 <li class="nav-item">
                     <a href="DeleteProject.jsp" target="main">
-                        <i class="icon material-icons sidebar-icons">delete</i>删除项目</a></li>
+                        <i class="icon material-icons sidebar-icons">delete</i>退出项目</a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
                     <a href="quit.jsp" target="_top">
-                        <i class="icon material-icons sidebar-icons">home</i>退出</a></li>
+                        <i class="icon material-icons sidebar-icons">exit_to_app</i>退出</a></li>
             </ul>
         </div>
     </div>
