@@ -14,19 +14,19 @@ public class Project {
     }
 
     public String getName() {
-        return name;
+        return TextEdit.de_coder(name);
     }
 
     public String getClassroom() {
-        return classroom;
+        return TextEdit.de_coder(classroom);
     }
 
     public String getDetail() {
-        return detail;
+        return TextEdit.de_coder(detail);
     }
 
     public String getMember() {
-        return member;
+        return TextEdit.de_coder(member);
     }
 
     public String getLink() {
@@ -34,11 +34,11 @@ public class Project {
     }
 
     public String getEval() {
-        return eval;
+        return TextEdit.de_coder(eval);
     }
 
     public String getTeacher_eval() {
-        return teacher_eval;
+        return TextEdit.de_coder(teacher_eval);
     }
 
     public void setId(int id) {

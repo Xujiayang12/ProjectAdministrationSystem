@@ -2,6 +2,7 @@ package info;
 
 import org.apache.ibatis.session.SqlSession;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.util.List;
 
 public class User {
@@ -13,7 +14,7 @@ public class User {
     }
 
     public String getName() {
-        return name;
+        return TextEdit.de_coder(name);
     }
 
     public String getPassword() {
@@ -21,7 +22,7 @@ public class User {
     }
 
     public String getClassroom() {
-        return classroom;
+        return TextEdit.de_coder(classroom);
     }
 
     public String getQq() {

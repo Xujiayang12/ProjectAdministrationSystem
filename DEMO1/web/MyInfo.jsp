@@ -83,6 +83,10 @@
             <h3 class="panel-title">班级</h3>
         </div>
         <div class="panel-body">
+            <%--<%--%>
+                <%--String classroom = URLDecoder.decode(user.getClassroom(),"UTF-8");--%>
+            <%--%>--%>
+            <%--<%=classroom%>--%>
             <%=user.getClassroom()%>
         </div>
     </div>
@@ -94,7 +98,7 @@
             <%=user.getQq()%>
         </div>
     </div>
-    <div class="panel panel-danger">
+    <div class="panel panel-danger"  >
         <div class="panel-heading">
             <h3 class="panel-title">手机号</h3>
         </div>
@@ -102,7 +106,7 @@
             <%=user.getPhone()%>
         </div>
     </div>
-    <div class="panel panel-success">
+    <div class="panel panel-success" <% if (user.getAdmin()==1){out.print("style=\"visibility: hidden;\"");}%>>
         <div class="panel-heading">
             <h3 class="panel-title">加入的项目</h3>
         </div>
@@ -110,6 +114,8 @@
             <%=user_project%>
         </div>
     </div>
+
+    <a type="button" class="btn btn-success" href="EditInfo.jsp">编辑信息</a>
 </div>
 </body>
 </html>

@@ -300,19 +300,19 @@
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">姓名</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="fullname"/>
+                                        <input class="weui-input" type="text" name="fullname" required="required"/>
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">帐号</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="username" pattern="[0-9]*" placeholder="仅数字，建议使用学号"/>
+                                        <input class="weui-input" type="text" name="username" pattern="[0-9]*" placeholder="仅数字,无法再改" required="required"/>
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">密码</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="password" name="password"/>
+                                        <input class="weui-input" type="password" name="password" required="required"/>
                                     </div>
                                 </div>
                                 <div class="weui-cell weui-cell_select weui-cell_select-after">
@@ -320,7 +320,7 @@
                                         <label class="weui-label">班级</label>
                                     </div>
                                     <div class="weui-cell__bd">
-                                        <select class="weui-select" name="classroom">
+                                        <select class="weui-select" name="classroom" required="required">
                                             <option value="软工1班">软工1班</option>
                                             <option value="软工2班">软工2班</option>
                                             <option value="软工3班">软工3班</option>
@@ -334,13 +334,13 @@
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">QQ</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="qq" pattern="[0-9]*"/>
+                                        <input class="weui-input" type="text" name="qq" pattern="[0-9]*" required="required"/>
                                     </div>
                                 </div>
                                 <div class="weui-cell">
                                     <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
                                     <div class="weui-cell__bd">
-                                        <input class="weui-input" type="text" name="phone" pattern="[0-9]*" />
+                                        <input class="weui-input" type="text" name="phone" pattern="[0-9]*" required="required"/>
                                     </div>
                                 </div>
                                 <div class="weui-form-preview__ft">
