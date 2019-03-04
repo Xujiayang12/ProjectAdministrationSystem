@@ -1,6 +1,7 @@
 package info;
 
 import org.apache.ibatis.session.SqlSession;
+
 import java.io.IOException;
 import java.net.URLDecoder;
 import java.util.List;
@@ -94,8 +95,7 @@ public class User {
         this.phone = phone;
     }
 
-    public String getProjectName()
-    {
+    public String getProjectName() {
         return getProjectNameById(this.project);
     }
 
@@ -133,8 +133,7 @@ public class User {
         }
     }
 
-    public static List<User> findAllByClass(String classroom)
-    {
+    public static List<User> findAllByClass(String classroom) {
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
         try {
@@ -216,6 +215,30 @@ public class User {
         }
     }
 
+    public static boolean adminAdd(String account, String name, String password, String classroom, String qq, String phone, String admin) {
+        DBAccess dbAccess = new DBAccess();//管理员增加
+        SqlSession sqlSession = null;
+        try {
+            if (isAccountExist(account)) return false;
+            else {
+                sqlSession = dbAccess.getSqlsession();
+                User u = new User();
+                u.setAllWhenSignUp(account, name, password, classroom, qq, phone);
+                u.setAdmin(Integer.parseInt(admin));
+                sqlSession.insert("User.adminAdd", u);
+                sqlSession.commit();
+                return true;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+            return false;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
     public static boolean isAccountExist(String account) {
         DBAccess dbAccess = new DBAccess();//检测帐号是否存在
         SqlSession sqlSession = null;
@@ -259,12 +282,12 @@ public class User {
         }
     }
 
-    public static void deleteById(int id){
+    public static void deleteById(int id) {
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
         try {
             sqlSession = dbAccess.getSqlsession();
-            sqlSession.delete("User.deleteById",id);
+            sqlSession.delete("User.deleteById", id);
             sqlSession.commit();
         } catch (IOException e) {
             e.printStackTrace();
@@ -275,12 +298,13 @@ public class User {
         }
     }
 
-    public static void updateById(User u){
+    public static void deleteById(String id) {
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
         try {
             sqlSession = dbAccess.getSqlsession();
-            sqlSession.update("User.updateById",u);
+            int id_num = Integer.parseInt(id);
+            sqlSession.delete("User.deleteById", id_num);
             sqlSession.commit();
         } catch (IOException e) {
             e.printStackTrace();
@@ -291,9 +315,24 @@ public class User {
         }
     }
 
-    public static String getProjectNameById(int id)
-    {
-        if(id == 0) return "无";
+    public static void updateById(User u) {
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            sqlSession.update("User.updateById", u);
+            sqlSession.commit();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
+    public static String getProjectNameById(int id) {
+        if (id == 0) return "无";
         else {
             Project a_p = Project.findById(id);
             return a_p.getName();
@@ -306,8 +345,7 @@ public class User {
 //        user.setClassroom(user2.getClassroom());
 //        User.updateById(user);
         List<User> stulist = User.findAllByClass(user.getClassroom());
-        for(User u:stulist)
-        {
+        for (User u : stulist) {
             System.out.println(u.name);
         }
     }

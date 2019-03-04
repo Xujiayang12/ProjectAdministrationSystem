@@ -45,6 +45,10 @@
     INSERT INTO user (account, name, password, classroom, qq, phone, admin, project) VALUES (#{account},#{name},#{password},#{classroom},#{qq},#{phone},0,0)
   </insert>
 
+    <insert id="adminAdd" parameterType="info.User">
+    INSERT INTO user (account, name, password, classroom, qq, phone, admin, project) VALUES (#{account},#{name},#{password},#{classroom},#{qq},#{phone},#{admin},0)
+  </insert>
+
     <delete id="deleteById" parameterType="int">
         DELETE FROM user WHERE id = #{id}
     </delete>

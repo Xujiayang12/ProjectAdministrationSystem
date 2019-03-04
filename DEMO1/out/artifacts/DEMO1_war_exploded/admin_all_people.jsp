@@ -39,8 +39,7 @@
 <div class="container">
     <div class="jumbotron">
         <h1><%=cls%></h1>
-        <h4>成员管理</h4>
-        <button type="button" class="btn btn-primary" href="admin_add_people.jsp">添加成员</button>
+        <a href="admin_add_people.jsp"><button type="button" class="btn btn-primary" href="admin_add_people.jsp">添加成员</button></a>
     </div>
     <table class="table table-hover">
         <thead>
@@ -57,7 +56,7 @@
         <%
             for(User u:stulist)
             {
-                out.print("<tr><td>"+u.getId()+"</td><td>"+u.getAccount()+"</td><td>"+u.getName()+"</td><td>"+u.getPhone()+"</td><td>"+u.getProjectName()+"</td><td><button type=\"button\" class=\"btn btn-danger\">删除</button><button type=\"button\" class=\"btn btn-info\">编辑</button><td></tr>");
+                out.print("<tr><td>"+u.getId()+"</td><td>"+u.getAccount()+"</td><td>"+u.getName()+"</td><td>"+u.getPhone()+"</td><td>"+u.getProjectName()+"</td><td><a href=\"admin_do_delete.jsp?id="+u.getId()+"\"><button type=\"button\" class=\"btn btn-danger\">删除</button></a></td></tr>");
             }
         %>
         </tbody>
