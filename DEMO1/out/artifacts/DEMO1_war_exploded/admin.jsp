@@ -326,7 +326,7 @@
                     <a href="admin_all_people.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">people</i>班级成员</a></li>
                 <li class="nav-item">
-                    <a href="SetProject.jsp" target="main">
+                    <a href="markdown/examples/SetProject.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">pages</i>班级项目</a></li>
                 <li class="nav-item">
                     <a href="JoinProject.jsp" target="main">

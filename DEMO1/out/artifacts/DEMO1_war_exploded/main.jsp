@@ -326,7 +326,7 @@
                     <a href="MyProject.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">person</i>我的项目</a></li>
                 <li class="nav-item">
-                    <a href="SetProject.jsp" target="main">
+                    <a href="markdown/examples/SetProject.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">cloud_upload</i>发布项目</a></li>
                 <li class="nav-item">
                     <a href="JoinProject.jsp" target="main">
