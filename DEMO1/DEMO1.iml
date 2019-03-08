@@ -21,6 +21,5 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 7.0.93" level="application_server_libraries" />
     <orderEntry type="library" name="sqlite-jdbc-3.23.1" level="project" />
-    <orderEntry type="library" name="mybatis-3.2.7" level="project" />
   </component>
 </module>

@@ -7,10 +7,18 @@ import java.util.List;
 
 public class Project {
     private int id;
-    private String name, classroom, detail, member, link, eval, teacher_eval;
+    private String name, classroom, detail, member, link, eval, teacher_eval,document;
 
     public int getId() {
         return id;
+    }
+
+    public void setDocument(String document) {
+        this.document = document;
+    }
+
+    public String getDocument() {
+        return TextEdit.de_coder(document);
     }
 
     public String getName() {

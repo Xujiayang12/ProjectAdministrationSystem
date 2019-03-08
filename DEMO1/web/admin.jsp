@@ -329,7 +329,7 @@
                     <a href="markdown/examples/SetProject.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">pages</i>班级项目</a></li>
                 <li class="nav-item">
-                    <a href="JoinProject.jsp" target="main">
+                    <a href="ProjectDetail.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">school</i>成绩管理</a></li>
                 <li class="nav-item">
                     <a href="SeeProject.jsp" target="main">

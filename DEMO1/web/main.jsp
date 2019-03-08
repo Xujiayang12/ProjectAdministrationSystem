@@ -323,7 +323,7 @@
                     </a></li>
                 <div class="divider"></div>
                 <li class="nav-item">
-                    <a href="MyProject.jsp" target="main">
+                    <a href="ProjectDetail.jsp" target="main">
                         <i class="icon material-icons sidebar-icons">person</i>我的项目</a></li>
                 <li class="nav-item">
                     <a href="markdown/examples/SetProject.jsp" target="main">

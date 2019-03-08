@@ -150,6 +150,23 @@ public class User {
         }
     }
 
+    public static List<User> findAllByProject(int project) {
+        DBAccess dbAccess = new DBAccess();
+        SqlSession sqlSession = null;
+        try {
+            sqlSession = dbAccess.getSqlsession();
+            List<User> Userlist = sqlSession.selectList("User.findByProject", project);
+            return Userlist;
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        } finally {
+            if (sqlSession != null) {
+                sqlSession.close();
+            }
+        }
+    }
+
     public static List<User> findAll() {//列出所有用户，返回User集合
         DBAccess dbAccess = new DBAccess();
         SqlSession sqlSession = null;
@@ -340,11 +357,11 @@ public class User {
     }
 
     public static void main(String args[]) {
-        User user = User.findByAccount("admin");
+        User user = User.findByAccount("0002");
 //        User user2 = User.findByAccount("0001");
 //        user.setClassroom(user2.getClassroom());
 //        User.updateById(user);
-        List<User> stulist = User.findAllByClass(user.getClassroom());
+        List<User> stulist = User.findAllByProject(user.getProject());
         for (User u : stulist) {
             System.out.println(u.name);
         }

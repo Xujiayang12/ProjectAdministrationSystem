@@ -37,6 +37,10 @@
     SELECT * FROM user where account = #{account:VARCHAR}
   </select>
 
+    <select id="findByProject" parameterType="int" resultMap="UserResult">
+    SELECT * FROM user where project = #{project:INTEGER}
+  </select>
+
     <select id="findByClass" parameterType="String" resultMap="UserResult">
     SELECT * FROM user where classroom = #{classroom:VARCHAR} ORDER BY account ASC ;
   </select>

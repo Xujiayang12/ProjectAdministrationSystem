@@ -14,6 +14,8 @@
         <result column="link" jdbcType="VARCHAR" property="link"/>
         <result column="eval" jdbcType="VARCHAR" property="eval"/>
         <result column="teacher_eval" jdbcType="VARCHAR" property="teacher_eval"/>
+        <result column="document" jdbcType="VARCHAR" property="document"/>
+
     </resultMap>
 
     <select id="findById" parameterType="INTEGER" resultMap="ProjectResult">
